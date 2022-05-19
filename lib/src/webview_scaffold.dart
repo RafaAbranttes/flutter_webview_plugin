@@ -41,6 +41,7 @@ class WebviewScaffold extends StatefulWidget {
     this.geolocationEnabled,
     this.debuggingEnabled = false,
     this.ignoreSSLErrors = false,
+    this.backgroundcolor = Colors.white,
   }) : super(key: key);
 
   final PreferredSizeWidget appBar;
@@ -74,6 +75,7 @@ class WebviewScaffold extends StatefulWidget {
   final bool useWideViewPort;
   final bool debuggingEnabled;
   final bool ignoreSSLErrors;
+  final Color backgroundcolor;
 
   @override
   _WebviewScaffoldState createState() => _WebviewScaffoldState();
@@ -149,6 +151,7 @@ class _WebviewScaffoldState extends State<WebviewScaffold> {
       resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
       persistentFooterButtons: widget.persistentFooterButtons,
       bottomNavigationBar: widget.bottomNavigationBar,
+      backgroundColor: widget.backgroundcolor,
       body: _WebviewPlaceholder(
         onRectChanged: (Rect value) {
           if (_rect == null) {
